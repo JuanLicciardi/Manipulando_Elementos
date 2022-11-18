@@ -9,7 +9,7 @@ console.log('Vinculacion externa Realizada')
   
       // INGRESAR NOMBRE CON prompt
       const nombre = prompt('Ingrese su nombe')
-
+ 
       // Depende el nombre ingresado o no se agrega al BIENVENIDO 
       if(nombre){
         subtitulo.innerHTML += nombre
@@ -24,10 +24,25 @@ console.log('Vinculacion externa Realizada')
       referencias.style.color = '#E51B3E'
 
       // Consulta cambiar fondo
-      const CambioFondo = confirm('Desea Cambiar el fondo')
+
+      /* const CambioFondo = confirm('Desea Cambiar el fondo')
       if (CambioFondo){
         document.querySelector('body').classList.add('fondo')
-      }
+      } */
+
+      Swal.fire({
+        title: 'Desea Cambiar el Fondo?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: 'Ok',
+        denyButtonText: `Cancelar`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          document.querySelector('body').classList.add('fondo')
+          Swal.fire('Cambio Realizado','', 'success')
+        }
+      })
+
   
       // Agregar clase segun sea par o impar la etiqueta <p>
       parrafos.forEach((parrafo,index) => {
