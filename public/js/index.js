@@ -1,4 +1,4 @@
-console.log('Vinculacion externa Realizada')
+console.log('Vinculacion externa Realizada INDEX.JS')
 
      // MICRO DESAFIO 1
       // SELECCIONAR ETIQUETAS
